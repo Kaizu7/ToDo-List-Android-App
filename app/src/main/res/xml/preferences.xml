@@ -34,25 +34,25 @@
         android:summary="@string/preferences_backup_restore_summary"
         android:title="@string/preferences_backup_restore_title" />
     <PreferenceCategory android:title="@string/category_additional" />
-    <Preference
-        android:key="rate_app"
-        android:onClick="onMultipleIncludeOwnClick"
-        android:summary="@string/preferences_rate_app_summary"
-        android:title="@string/preferences_rate_app_title" />
+
     <Preference
         android:key="send_feedback"
         android:onClick="onMultipleIncludeOwnClick"
         android:summary="@string/preferences_send_feedback_summary"
         android:title="@string/preferences_send_feedback_title" />
     <Preference
-        android:key="other_apps"
-        android:onClick="onMultipleIncludeOwnClick"
-        android:summary="@string/preferences_other_apps_summary"
-        android:title="@string/preferences_other_apps_title" />
+        android:key="get_location"
+        android:summary="Tap to know your Location"
+        android:title="Location" />
+    <Preference
+        android:key="Calci"
+        android:summary="Know your total"
+        android:title="Calculator" />
+
     <PreferenceCategory android:title="@string/category_about" />
     <Preference
         android:key="about_version"
-        android:summary="1.2"
+        android:summary="1.0"
         android:title="@string/preferences_about_version_title" />
     <Preference
         android:key="about_licenses"

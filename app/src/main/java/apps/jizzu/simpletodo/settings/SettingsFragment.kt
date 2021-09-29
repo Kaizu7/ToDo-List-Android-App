@@ -105,25 +105,15 @@ class SettingsFragment : PreferenceFragment() {
             true
         }
 
-        findPreference("about_version").onPreferenceClickListener = createPreferenceClickListener("https://github.com/Jizzu/SimpleToDo")
+        findPreference("about_version").onPreferenceClickListener = createPreferenceClickListener("https://github.com/Kaizu7/ToDo-List-Android-App")
 
-        val rateThisApp = findPreference("rate_app")
-        rateThisApp.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            val appPackageName = activity.packageName
-            try {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$appPackageName")))
-            } catch (anfe: android.content.ActivityNotFoundException) {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")))
-            }
 
-            true
-        }
 
         val sendFeedback = findPreference("send_feedback")
         sendFeedback.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             val email = Intent(Intent.ACTION_SENDTO)
             email.data = Uri.Builder().scheme("mailto").build()
-            email.putExtra(Intent.EXTRA_EMAIL, arrayOf("ilya.ponomarenko.dev@gmail.com"))
+            email.putExtra(Intent.EXTRA_EMAIL, arrayOf("naeemghadai007.com@gmail.com"))
             email.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback_title))
             email.putExtra(Intent.EXTRA_TEXT, getString(R.string.feedback_device_info) + "\n" + DeviceInfo.deviceInfo
                     + "\n" + getString(R.string.feedback_app_version) + BuildConfig.VERSION_NAME
@@ -137,11 +127,7 @@ class SettingsFragment : PreferenceFragment() {
             true
         }
 
-        val otherApps = findPreference("other_apps")
-        otherApps.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/developer?id=Ilya+Ponomarenko")))
-            true
-        }
+
 
         val licences = findPreference("about_licenses")
         licences.onPreferenceClickListener = Preference.OnPreferenceClickListener {
