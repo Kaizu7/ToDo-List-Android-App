@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:key="Devop_1"
+        android:summary="Kaizad Beddingwala"
+        android:title="Devop_1" />
+    <Preference
+        android:key="Devop_2"
+        android:summary="Ghadai Mohd Naeem"
+        android:title="Devop_2" />
+
+</PreferenceScreen>
