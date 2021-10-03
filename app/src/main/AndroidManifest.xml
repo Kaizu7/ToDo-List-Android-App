@@ -48,6 +48,10 @@
             android:name=".settings.LicensesActivity"
             android:screenOrientation="portrait"
             android:theme="@style/PreferenceScreen" />
+        <activity
+            android:name=".activity.MainActivityChatbot"
+            android:screenOrientation="portrait"
+            android:theme="@style/PreferenceScreen" />
 
         <service
             android:name=".widget.WidgetService"

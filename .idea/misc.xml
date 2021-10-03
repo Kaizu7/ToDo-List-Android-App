@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/app/Simple ToDo Application/app/src/main/res/drawable/receive_round_box.xml" value="0.11666666666666667" />
+        <entry key="..\:/app/Simple ToDo Application/app/src/main/res/drawable/round_button.xml" value="0.1935185185185185" />
         <entry key="..\:/app/Simple ToDo Application/app/src/main/res/drawable/rounded_corner.xml" value="0.1125" />
+        <entry key="..\:/app/Simple ToDo Application/app/src/main/res/drawable/send_round_box.xml" value="0.11666666666666667" />
         <entry key="..\:/app/Simple ToDo Application/app/src/main/res/layout/activity_add_task.xml" value="0.20416666666666666" />
+        <entry key="..\:/app/Simple ToDo Application/app/src/main/res/layout/activity_chatbot.xml" value="0.20416666666666666" />
         <entry key="..\:/app/Simple ToDo Application/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/app/Simple ToDo Application/app/src/main/res/layout/activity_settings.xml" value="0.20416666666666666" />
+        <entry key="..\:/app/Simple ToDo Application/app/src/main/res/layout/message_item.xml" value="0.20416666666666666" />
         <entry key="..\:/app/Simple ToDo Application/app/src/main/res/layout/model_task.xml" value="0.20416666666666666" />
         <entry key="..\:/app/Simple ToDo Application/app/src/main/res/layout/widget_item.xml" value="0.20416666666666666" />
         <entry key="..\:/app/Simple ToDo Application/app/src/main/res/layout/widget_list.xml" value="0.20416666666666666" />

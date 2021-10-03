@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import android.os.Build.VERSION.SDK_INT
 import android.os.Build.VERSION_CODES.LOLLIPOP
 import android.preference.PreferenceManager
@@ -43,7 +44,7 @@ class AlarmReceiver : BroadcastReceiver() {
         val ringtonePath = preferences.getString("notification_sound", "")
 
         // Set NotificationChannel for Android Oreo
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+        if (SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(CHANNEL_ID, "SimpleToDo Notifications",
                     NotificationManager.IMPORTANCE_HIGH)
             channel.enableLights(true)

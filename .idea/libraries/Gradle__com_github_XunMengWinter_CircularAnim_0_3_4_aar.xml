@@ -1,11 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.XunMengWinter:CircularAnim:0.3.4@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CircularAnim-0.3.4.aar/313fe0afdc0f77b77f0b69ddc5e99821/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CircularAnim-0.3.4.aar/313fe0afdc0f77b77f0b69ddc5e99821/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CircularAnim-0.3.4.aar/313fe0afdc0f77b77f0b69ddc5e99821/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b31f73bdc39f4a6ac037fed35ab9454/CircularAnim-0.3.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b31f73bdc39f4a6ac037fed35ab9454/CircularAnim-0.3.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b31f73bdc39f4a6ac037fed35ab9454/CircularAnim-0.3.4/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.XunMengWinter/CircularAnim/0.3.4/4904c14172a9bb961ce96322723fb06b7e5dda92/CircularAnim-0.3.4-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

@@ -151,8 +151,8 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
                 mSearchViewIsOpen = true
                 mFab.hide()
                 mFab.isEnabled = false
-                mHelp.hide()
-                mHelp.isEnabled = false
+//                mHelp.hide()
+//                mHelp.isEnabled = false
                 Log.d(TAG, "isSearchOpen = $mSearchViewIsOpen")
             }
 
@@ -167,8 +167,8 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
                 handler.postDelayed({
                     mFab.show()
                     mFab.isEnabled = true
-                    mHelp.show()
-                    mHelp.isEnabled = true
+//                    mHelp.show()
+//                    mHelp.isEnabled = true
                 }, 500)
                 Log.d(TAG, "isSearchOpen = $mSearchViewIsOpen")
             }
@@ -192,22 +192,15 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
             }
         }
 
-        mHelp.setOnClickListener { view ->
-            if (mPreferenceHelper.getBoolean(PreferenceHelper.ANIMATION_IS_ON)) {
-                CircularAnim.fullActivity(this@MainActivity, view)
-                        .colorOrImageRes(R.color.colorPrimary)
-                        .duration(300)
-                        .go {
-                            val intent = Intent(this@MainActivity, AddTaskActivity::class.java)
+        mHelp.setOnClickListener {
+
+                            val intent = Intent(this@MainActivity, MainActivityChatbot::class.java)
 
                             // Method startActivityForResult(Intent, int) allows to get the right data (Title for RecyclerView item for example) from another activity.
                             // To obtain data from the activity used onActivityResult(int, int, Intent) method that is called when the AddTaskActivity completes it's work.
-                            startActivityForResult(intent, 1)
-                        }
-            } else {
-                val intent = Intent(this@MainActivity, AddTaskActivity::class.java)
-                startActivityForResult(intent, 1)
-            }
+                            startActivityForResult(intent,1)
+
+
         }
         mRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
@@ -217,17 +210,17 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
                 } else if (dy < 0 && mFab.visibility != View.VISIBLE && !mSearchViewIsOpen) {
                     mFab.show()
                 }
-                if (dy > 0 && mHelp.visibility == View.VISIBLE) {
-                    mHelp.hide()
-                } else if (dy < 0 && mHelp.visibility != View.VISIBLE && !mSearchViewIsOpen) {
-                    mHelp.show()
-                }
+//                if (dy > 0 && mHelp.visibility == View.VISIBLE) {
+//                    mHelp.hide()
+//                } else if (dy < 0 && mHelp.visibility != View.VISIBLE && !mSearchViewIsOpen) {
+//                    mHelp.show()
+//                }
             }
         })
 
         if (mPreferenceHelper.getBoolean(PreferenceHelper.ANIMATION_IS_ON)) {
             mFab.visibility = View.GONE
-            mHelp.visibility = View.GONE
+//            mHelp.visibility = View.GONE
 
             // Starts the RecyclerView items animation
             val resId = R.anim.layout_animation
@@ -235,7 +228,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
             mRecyclerView.layoutAnimation = animation
         } else {
             mFab.visibility = View.VISIBLE
-            mHelp.visibility = View.VISIBLE
+//            mHelp.visibility = View.VISIBLE
         }
     }
 
@@ -372,7 +365,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
     override fun updateData() = updateGeneralNotification()
 
     override fun showFAB() = mFab.show()
-    fun showHelp() = mHelp.show()
+//    fun showHelp() = mHelp.show()
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
@@ -417,9 +410,9 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
         if (!mFab.isShown && !mSearchViewIsOpen) {
             mFab.show()
         }
-        if (!mHelp.isShown && !mSearchViewIsOpen) {
-            mHelp.show()
-        }
+//        if (!mHelp.isShown && !mSearchViewIsOpen) {
+//            mHelp.show()
+//        }
         updateWidget()
     }
 
@@ -427,7 +420,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
         super.onResume()
 
         mFab.visibility = View.GONE
-        mHelp.visibility = View.GONE
+//        mHelp.visibility = View.GONE
         Log.d(TAG, "onResume call!!!")
 
         if (!mSearchViewIsOpen) {
@@ -436,16 +429,16 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
                 val handler = Handler()
                 handler.postDelayed({
                     mFab.visibility = View.VISIBLE
-                    mHelp.visibility = View.VISIBLE
+//                    mHelp.visibility = View.VISIBLE
                     val myAnim = AnimationUtils.loadAnimation(mContext, R.anim.fab_animation)
                     val interpolator = Interpolator(0.2, 20.0)
                     myAnim.interpolator = interpolator
                     mFab.startAnimation(myAnim)
-                    mHelp.startAnimation(myAnim)
+//                    mHelp.startAnimation(myAnim)
                 }, 300)
             } else {
                 mFab.visibility = View.VISIBLE
-                mHelp.visibility = View.VISIBLE
+//                mHelp.visibility = View.VISIBLE
             }
         }
         MyApplication.activityResumed()
