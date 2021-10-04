@@ -16,7 +16,7 @@ import java.io.*
  * Class for managing backup file.
  */
 class BackupHelper(private val mContext: Context) {
-    private val mFile = File(Environment.getExternalStoragePublicDirectory("SimpleToDo"), "Backup.ser")
+    private val mFile = File(Environment.getExternalStoragePublicDirectory("NKToDo"), "Backup.ser")
     private val mAdapter = RecyclerViewAdapter.getInstance()
 
     fun showCreateDialog() {
@@ -113,7 +113,7 @@ class BackupHelper(private val mContext: Context) {
     }
 
     private fun makeFolder() {
-        val file = File(Environment.getExternalStorageDirectory().absolutePath, "SimpleToDo")
+        val file = File(Environment.getExternalStorageDirectory().absolutePath, "NKToDo")
 
         if (!file.exists()) {
             val isCreated = file.mkdir()

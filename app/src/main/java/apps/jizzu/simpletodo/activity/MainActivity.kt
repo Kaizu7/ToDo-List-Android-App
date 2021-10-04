@@ -151,8 +151,8 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
                 mSearchViewIsOpen = true
                 mFab.hide()
                 mFab.isEnabled = false
-//                mHelp.hide()
-//                mHelp.isEnabled = false
+                mHelp.hide()
+                mHelp.isEnabled = false
                 Log.d(TAG, "isSearchOpen = $mSearchViewIsOpen")
             }
 
@@ -167,8 +167,8 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
                 handler.postDelayed({
                     mFab.show()
                     mFab.isEnabled = true
-//                    mHelp.show()
-//                    mHelp.isEnabled = true
+                    mHelp.show()
+                    mHelp.isEnabled = true
                 }, 500)
                 Log.d(TAG, "isSearchOpen = $mSearchViewIsOpen")
             }
@@ -210,17 +210,17 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
                 } else if (dy < 0 && mFab.visibility != View.VISIBLE && !mSearchViewIsOpen) {
                     mFab.show()
                 }
-//                if (dy > 0 && mHelp.visibility == View.VISIBLE) {
-//                    mHelp.hide()
-//                } else if (dy < 0 && mHelp.visibility != View.VISIBLE && !mSearchViewIsOpen) {
-//                    mHelp.show()
-//                }
+                if (dy > 0 && mHelp.visibility == View.VISIBLE) {
+                    mHelp.hide()
+                } else if (dy < 0 && mHelp.visibility != View.VISIBLE && !mSearchViewIsOpen) {
+                    mHelp.show()
+                }
             }
         })
 
         if (mPreferenceHelper.getBoolean(PreferenceHelper.ANIMATION_IS_ON)) {
             mFab.visibility = View.GONE
-//            mHelp.visibility = View.GONE
+            mHelp.visibility = View.GONE
 
             // Starts the RecyclerView items animation
             val resId = R.anim.layout_animation
@@ -228,7 +228,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
             mRecyclerView.layoutAnimation = animation
         } else {
             mFab.visibility = View.VISIBLE
-//            mHelp.visibility = View.VISIBLE
+            mHelp.visibility = View.VISIBLE
         }
     }
 
@@ -330,7 +330,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
 
         // Set NotificationChannel for Android Oreo
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(AlarmReceiver.CHANNEL_ID, "SimpleToDo Notifications",
+            val channel = NotificationChannel(AlarmReceiver.CHANNEL_ID, "NKToDo Notifications",
                     NotificationManager.IMPORTANCE_HIGH)
             channel.enableLights(true)
             channel.lightColor = Color.GREEN
@@ -365,7 +365,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
     override fun updateData() = updateGeneralNotification()
 
     override fun showFAB() = mFab.show()
-//    fun showHelp() = mHelp.show()
+    fun showHelp() = mHelp.show()
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
@@ -410,9 +410,9 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
         if (!mFab.isShown && !mSearchViewIsOpen) {
             mFab.show()
         }
-//        if (!mHelp.isShown && !mSearchViewIsOpen) {
-//            mHelp.show()
-//        }
+        if (!mHelp.isShown && !mSearchViewIsOpen) {
+            mHelp.show()
+        }
         updateWidget()
     }
 
@@ -420,7 +420,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
         super.onResume()
 
         mFab.visibility = View.GONE
-//        mHelp.visibility = View.GONE
+        mHelp.visibility = View.GONE
         Log.d(TAG, "onResume call!!!")
 
         if (!mSearchViewIsOpen) {
@@ -429,16 +429,16 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.AdapterCallback {
                 val handler = Handler()
                 handler.postDelayed({
                     mFab.visibility = View.VISIBLE
-//                    mHelp.visibility = View.VISIBLE
+                    mHelp.visibility = View.VISIBLE
                     val myAnim = AnimationUtils.loadAnimation(mContext, R.anim.fab_animation)
                     val interpolator = Interpolator(0.2, 20.0)
                     myAnim.interpolator = interpolator
                     mFab.startAnimation(myAnim)
-//                    mHelp.startAnimation(myAnim)
+                    mHelp.startAnimation(myAnim)
                 }, 300)
             } else {
                 mFab.visibility = View.VISIBLE
-//                mHelp.visibility = View.VISIBLE
+                mHelp.visibility = View.VISIBLE
             }
         }
         MyApplication.activityResumed()
